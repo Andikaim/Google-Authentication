@@ -19,10 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('login/github','GithubController@redirectToProvider');
-Route::get('login/github/callback','GithubController@handleProviderCallback');
 
-Auth::routes();
+Route::get('/auth/redirect', 'Auth\LoginController@redirectToProvider');
+Route::get('/auth/callback', 'Auth\LoginController@handleProviderCallback');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
